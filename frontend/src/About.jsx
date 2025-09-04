@@ -1,8 +1,8 @@
 import React from 'react'
 
 const skills = [
-  'JavaScript (ES6+)', 'TypeScript', 'React', 'Node.js', 'Express',
-  'MongoDB', 'HTML5 & CSS3', 'Tailwind CSS', 'Git & GitHub', 'REST APIs'
+  'C','C++','Python','Data Structure and Algorithm','OOPs', 'JavaScript (ES6+)', 'SQL','MySQL', 'React', 'Node.js', 'Express',
+  'MongoDB', 'HTML5 & CSS3', 'Tailwind CSS', 'Git & GitHub', 'REST APIs','Deployment (Netlify, Render)'
 ];
 
 function About() {

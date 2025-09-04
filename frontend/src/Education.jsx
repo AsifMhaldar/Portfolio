@@ -35,7 +35,7 @@ function Education() {
           {education.map((edu, index) => (
             <div key={index} className="mb-10 ml-6 md:ml-10 relative">
               {/* Circle marker */}
-              <div className="absolute w-6 h-6 bg-blue-600 rounded-full -left-4 border-4 border-white"></div>
+              <div className="absolute w-6 h-6 bg-blue-600 rounded-full -left-13.5 border-4 border-white"></div>
 
               {/* Card content */}
               <div className="cursor-pointer bg-gradient-to-r from-indigo-200 via-purple-200 to-blue-300 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
