@@ -112,7 +112,7 @@ function Header() {
                 </div>
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
               </div>
-              <div className="hidden sm:block">
+              <div className="block">
                 <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Asif Mhaldar
                 </span>
