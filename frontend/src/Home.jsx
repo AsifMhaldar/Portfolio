@@ -84,13 +84,13 @@ function Home() {
             <div className="text-center lg:text-left max-w-full lg:max-w-2xl animate-fadeInUp">
               {/* Greeting */}
               <div className="mb-4">
-                <span className="text-lg sm:text-xl text-blue-600 font-semibold tracking-wider">
+                <span className="text-base sm:text-lg md:text-xl text-blue-600 font-semibold tracking-wider">
                   👋 HELLO, MY NAME IS
                 </span>
               </div>
 
               {/* Name with gradient */}
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3 sm:mb-4">
                 Asif 
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   {" "}Mhaldar
@@ -98,8 +98,8 @@ function Home() {
               </h1>
 
               {/* Animated title */}
-              <div className="mb-6">
-                <p className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-2">
+              <div className="mb-4 sm:mb-6">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 mb-2">
                   I am a 
                   <span className="ml-2 font-bold text-blue-600">
                     <span ref={textRef}></span>
@@ -108,44 +108,45 @@ function Home() {
               </div>
 
               {/* Description */}
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
                 Crafting modern web applications with cutting-edge technologies.
                 Passionate about building scalable solutions with beautiful UI/UX.
               </p>
 
-              {/* Tech Stack Icons */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
-                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-shadow">
-                  <FaCode className="text-blue-600" />
-                  <span className="text-sm font-medium">React.js</span>
+              {/* Tech Stack Icons - Mobile responsive */}
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8">
+                <div className="flex items-center gap-1 sm:gap-2 bg-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-full shadow-sm hover:shadow-md transition-shadow text-xs sm:text-sm">
+                  <FaCode className="text-blue-600 text-sm sm:text-base" />
+                  <span className="font-medium">React.js</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-shadow">
-                  <FaServer className="text-green-600" />
-                  <span className="text-sm font-medium">Node.js</span>
+                <div className="flex items-center gap-1 sm:gap-2 bg-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-full shadow-sm hover:shadow-md transition-shadow text-xs sm:text-sm">
+                  <FaServer className="text-green-600 text-sm sm:text-base" />
+                  <span className="font-medium">Node.js</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-shadow">
-                  <FaDatabase className="text-yellow-600" />
-                  <span className="text-sm font-medium">MongoDB</span>
+                <div className="flex items-center gap-1 sm:gap-2 bg-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-full shadow-sm hover:shadow-md transition-shadow text-xs sm:text-sm">
+                  <FaDatabase className="text-yellow-600 text-sm sm:text-base" />
+                  <span className="font-medium">MongoDB</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-shadow">
-                  <FaPalette className="text-purple-600" />
-                  <span className="text-sm font-medium">Express.js</span>
+                <div className="flex items-center gap-1 sm:gap-2 bg-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-full shadow-sm hover:shadow-md transition-shadow text-xs sm:text-sm">
+                  <FaPalette className="text-purple-600 text-sm sm:text-base" />
+                  <span className="font-medium">Express.js</span>
                 </div>
               </div>
 
-              {/* Social Links */}
-              <div className="flex flex-col sm:flex-row items-center gap-6 mb-10">
-                <div className="flex gap-4">
+              {/* Social Links - Mobile responsive */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mb-8 sm:mb-10">
+                {/* Social Buttons Grid for Mobile */}
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 w-full sm:w-auto">
                   {/* LinkedIn Button */}
                   <a
                     href="https://www.linkedin.com/in/asif-mhaldar-ab818b297"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative bg-gradient-to-br from-blue-500 to-blue-700 text-white p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                    className="group relative bg-gradient-to-br from-blue-500 to-blue-700 text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center justify-center"
                   >
-                    <FaLinkedin size={22} />
-                    <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-medium text-gray-600 whitespace-nowrap">
-                      Connect on LinkedIn
+                    <FaLinkedin className="text-lg sm:text-xl md:text-2xl" />
+                    <span className="absolute -bottom-7 sm:-bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-medium text-gray-600 whitespace-nowrap hidden sm:block">
+                      LinkedIn
                     </span>
                   </a>
 
@@ -154,48 +155,49 @@ function Home() {
                     href="https://github.com/AsifMhaldar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative bg-gradient-to-br from-gray-800 to-gray-900 text-white p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                    className="group relative bg-gradient-to-br from-gray-800 to-gray-900 text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center justify-center"
                   >
-                    <FaGithub size={22} />
-                    <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-medium text-gray-600 whitespace-nowrap">
-                      View GitHub
+                    <FaGithub className="text-lg sm:text-xl md:text-2xl" />
+                    <span className="absolute -bottom-7 sm:-bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-medium text-gray-600 whitespace-nowrap hidden sm:block">
+                      GitHub
                     </span>
                   </a>
 
-                  {/* WhatsApp Button - Added beside LinkedIn and GitHub */}
+                  {/* WhatsApp Button */}
                   <a
-                    href="https://wa.me/919405255107" // Replace with your WhatsApp number
+                    href="https://wa.me/919326307522"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative bg-gradient-to-br from-green-500 to-green-700 text-white p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                    className="group relative bg-gradient-to-br from-green-500 to-green-700 text-white p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center justify-center"
                   >
-                    <FaWhatsapp size={22} />
-                    <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-medium text-gray-600 whitespace-nowrap">
-                      Chat on WhatsApp
+                    <FaWhatsapp className="text-lg sm:text-xl md:text-2xl" />
+                    <span className="absolute -bottom-7 sm:-bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-medium text-gray-600 whitespace-nowrap hidden sm:block">
+                      WhatsApp
                     </span>
                   </a>
                 </div>
                 
+                {/* Get In Touch Button - Mobile responsive */}
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => scrollToSection('contact')}
-                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg sm:rounded-full font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   Get In Touch
                 </motion.button>
               </div>
             </div>
 
-            {/* Right - Profile Image */}
-            <div className="relative animate-fadeInUp animation-delay-300">
+            {/* Right - Profile Image - Mobile responsive */}
+            <div className="relative animate-fadeInUp animation-delay-300 mt-8 sm:mt-0">
               <div className="relative">
                 {/* Outer ring */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-spin-slow opacity-20 blur-md"></div>
                 
                 {/* Image container */}
-                <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 rounded-full p-1 shadow-2xl">
-                  <div className="relative overflow-hidden rounded-full w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 border-8 border-white">
+                <div className="relative bg-gradient-to-br from-blue-100 to-purple-100 rounded-full p-0.5 sm:p-1 shadow-xl sm:shadow-2xl">
+                  <div className="relative overflow-hidden rounded-full w-48 h-48 xs:w-56 xs:h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 border-4 sm:border-6 md:border-8 border-white">
                     <img
                       src={ProfileImg}
                       alt="Asif Mhaldar"
@@ -204,36 +206,36 @@ function Home() {
                   </div>
                 </div>
 
-                {/* Circular floating badges */}
+                {/* Circular floating badges - Mobile responsive */}
                 <div className="absolute inset-0">
                   {/* Top - Graduate Badge */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-3 rounded-full shadow-xl animate-bounce-slow z-10">
-                    <div className="text-xs font-bold">🎓 Grad 2025</div>
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-2 sm:p-3 rounded-full shadow-lg sm:shadow-xl animate-bounce-slow z-10">
+                    <div className="text-[10px] xs:text-xs font-bold">🎓 Grad 2025</div>
                   </div>
                   
                   {/* Right - MERN Badge */}
-                  <div className="absolute top-1/4 right-0 translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-full shadow-xl animate-bounce-slow animation-delay-200 z-10">
-                    <div className="text-xs font-bold">⚛️ MERN</div>
+                  <div className="absolute top-1/4 right-0 translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-2 sm:p-3 rounded-full shadow-lg sm:shadow-xl animate-bounce-slow animation-delay-200 z-10">
+                    <div className="text-[10px] xs:text-xs font-bold">⚛️ MERN</div>
                   </div>
                   
                   {/* Bottom Right - Projects Badge */}
-                  <div className="absolute bottom-1/4 right-0 translate-x-1/2 translate-y-1/2 bg-gradient-to-r from-green-500 to-emerald-500 text-white p-3 rounded-full shadow-xl animate-bounce-slow animation-delay-400 z-10">
-                    <div className="text-xs font-bold">Quick Learner</div>
+                  <div className="absolute bottom-1/4 right-0 translate-x-1/2 translate-y-1/2 bg-gradient-to-r from-green-500 to-emerald-500 text-white p-2 sm:p-3 rounded-full shadow-lg sm:shadow-xl animate-bounce-slow animation-delay-400 z-10">
+                    <div className="text-[10px] xs:text-xs font-bold">Quick Learner</div>
                   </div>
                   
                   {/* Bottom - AI/ML Badge */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full shadow-xl animate-bounce-slow animation-delay-600 z-10">
-                    <div className="text-xs font-bold">🤖 AI/ML</div>
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-gradient-to-r from-orange-500 to-red-500 text-white p-2 sm:p-3 rounded-full shadow-lg sm:shadow-xl animate-bounce-slow animation-delay-600 z-10">
+                    <div className="text-[10px] xs:text-xs font-bold">🤖 AI/ML</div>
                   </div>
                   
                   {/* Bottom Left - GitHub Badge */}
-                  <div className="absolute bottom-1/4 left-0 -translate-x-1/2 translate-y-1/2 bg-gradient-to-r from-gray-700 to-black text-white p-3 rounded-full shadow-xl animate-bounce-slow animation-delay-800 z-10">
-                    <div className="text-xs font-bold">💻 GitHub</div>
+                  <div className="absolute bottom-1/4 left-0 -translate-x-1/2 translate-y-1/2 bg-gradient-to-r from-gray-700 to-black text-white p-2 sm:p-3 rounded-full shadow-lg sm:shadow-xl animate-bounce-slow animation-delay-800 z-10">
+                    <div className="text-[10px] xs:text-xs font-bold">💻 GitHub</div>
                   </div>
                   
                   {/* Top Left - Quick Learner */}
-                  <div className="absolute top-1/4 left-0 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white p-3 rounded-full shadow-xl animate-bounce-slow animation-delay-1000 z-10">
-                    <div className="text-xs font-bold">📚 Problem Solver</div>
+                  <div className="absolute top-1/4 left-0 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white p-2 sm:p-3 rounded-full shadow-lg sm:shadow-xl animate-bounce-slow animation-delay-1000 z-10">
+                    <div className="text-[10px] xs:text-xs font-bold">📚 Problem Solver</div>
                   </div>
                 </div>
               </div>
@@ -241,13 +243,13 @@ function Home() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <button 
               onClick={() => scrollToSection('about')}
               className="flex flex-col items-center text-gray-400 hover:text-blue-600 transition-colors"
             >
-              <span className="text-sm mb-2">Explore More</span>
-              <FaArrowDown />
+              <span className="text-xs sm:text-sm mb-1 sm:mb-2">Explore More</span>
+              <FaArrowDown className="text-sm sm:text-base" />
             </button>
           </div>
         </div>

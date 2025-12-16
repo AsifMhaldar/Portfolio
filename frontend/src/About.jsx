@@ -91,52 +91,18 @@ function About() {
     }
   };
 
-  const timelineData = [
-    {
-      year: '2024 - Present',
-      title: 'Full-Stack Development Focus',
-      description: 'Building complex MERN stack applications, learning advanced concepts, and contributing to open-source projects.',
-      icon: <FaCode className="text-blue-500" />,
-      color: 'bg-blue-50',
-      borderColor: 'border-blue-200'
-    },
-    {
-      year: '2023 - 2024',
-      title: 'Web Development Bootcamp',
-      description: 'Mastered React, Node.js, Express, MongoDB, and modern web development tools and practices.',
-      icon: <FaGraduationCap className="text-purple-500" />,
-      color: 'bg-purple-50',
-      borderColor: 'border-purple-200'
-    },
-    {
-      year: '2021 - 2025',
-      title: 'B.E. Computer Science',
-      description: 'Pursuing degree with focus on software engineering, algorithms, and system design.',
-      icon: <FaUserGraduate className="text-green-500" />,
-      color: 'bg-green-50',
-      borderColor: 'border-green-200'
-    },
-    {
-      year: '2019 - 2021',
-      title: 'Coding Foundation',
-      description: 'Started with C/C++, learned core programming concepts and problem-solving skills.',
-      icon: <FaLightbulb className="text-yellow-500" />,
-      color: 'bg-yellow-50',
-      borderColor: 'border-yellow-200'
-    }
-  ];
 
   const achievements = [
-    { icon: '🏆', title: '4+ Projects', description: 'Completed personal and academic projects' },
-    { icon: '📚', title: '1000+ Hours', description: 'Of coding and learning' },
-    { icon: '⚡', title: 'Quick Learner', description: 'Adapt quickly to new technologies' },
-    { icon: '🎯', title: 'Problem Solver', description: 'Strong analytical skills' }
+    { icon: '🏆', title: '4+ Projects', description: 'Completed projects' },
+    { icon: '📚', title: '1000+ Hours', description: 'Coding & learning' },
+    { icon: '⚡', title: 'Quick Learner', description: 'Adapt quickly' },
+    { icon: '🎯', title: 'Problem Solver', description: 'Analytical skills' }
   ];
 
   return (
     <section 
       id='About' 
-      className='relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50'
+      className='relative py-12 md:py-20 lg:py-28 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50'
       ref={ref}
     >
       {/* Background elements */}
@@ -153,51 +119,51 @@ function About() {
           initial={{ y: -20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-12 lg:mb-16"
         >
-          <div className="inline-block mb-4">
-            <span className="text-lg font-semibold text-blue-600 bg-blue-50 px-4 py-2 rounded-full">
+          <div className="inline-block mb-3 md:mb-4">
+            <span className="text-sm md:text-base font-semibold text-blue-600 bg-blue-50 px-3 md:px-4 py-1.5 md:py-2 rounded-full">
               ABOUT ME
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4">
             Get to <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Know Me</span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-sm md:text-base lg:text-lg max-w-2xl mx-auto px-2">
             Passionate developer crafting digital experiences
           </p>
         </motion.div>
 
         {/* Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-start">
           
           {/* Left Column - About Me */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="space-y-8"
+            className="space-y-4 md:space-y-6 lg:space-y-8"
           >
             {/* Journey Card */}
             <motion.div
               variants={fadeInUp}
-              className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300"
+              className="bg-white p-5 sm:p-6 md:p-8 rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl border border-gray-100 hover:shadow-xl md:hover:shadow-2xl transition-shadow duration-300"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-blue-100 rounded-xl">
-                  <FaBrain className="text-2xl text-blue-600" />
+              <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <div className="p-2 md:p-3 bg-blue-100 rounded-lg md:rounded-xl">
+                  <FaBrain className="text-lg md:text-xl lg:text-2xl text-blue-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">My Journey</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900">My Journey</h3>
               </div>
               
-              <div className="space-y-4">
-                <p className="text-gray-700 leading-relaxed text-lg">
+              <div className="space-y-3 md:space-y-4">
+                <p className="text-gray-700 leading-relaxed text-sm md:text-base lg:text-lg">
                   I'm a passionate <span className="font-bold text-blue-600">MERN stack developer</span> who 
                   transforms ideas into reality through code. My journey began with curiosity about how 
                   things work behind the scenes, and has evolved into creating impactful digital solutions.
                 </p>
                 
-                <p className="text-gray-700 leading-relaxed text-lg">
+                <p className="text-gray-700 leading-relaxed text-sm md:text-base lg:text-lg">
                   What excites me most is solving complex problems and building applications that make 
                   a difference. I believe in writing clean, efficient code and creating intuitive user 
                   experiences.
@@ -207,7 +173,7 @@ function About() {
               {/* Highlights */}
               <motion.div
                 variants={containerVariants}
-                className="grid grid-cols-2 gap-4 mt-8"
+                className="grid grid-cols-2 gap-2 md:gap-3 lg:gap-4 mt-4 md:mt-6 lg:mt-8"
               >
                 {[
                   { icon: <FaGraduationCap />, text: 'Lifelong Learner', color: 'text-purple-600', bg: 'bg-purple-50' },
@@ -218,23 +184,22 @@ function About() {
                   <motion.div
                     key={index}
                     variants={itemVariants}
-                    className={`flex items-center gap-3 p-3 rounded-xl ${item.bg}`}
+                    className={`flex items-center gap-2 p-2 md:p-3 rounded-lg md:rounded-xl ${item.bg}`}
                   >
-                    <span className={`text-xl ${item.color}`}>{item.icon}</span>
-                    <span className="font-medium text-gray-800">{item.text}</span>
+                    <span className={`text-base md:text-lg lg:text-xl ${item.color}`}>{item.icon}</span>
+                    <span className="font-medium text-gray-800 text-xs md:text-sm lg:text-base">{item.text}</span>
                   </motion.div>
                 ))}
               </motion.div>
             </motion.div>
 
-
             {/* Achievements Grid */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-r from-blue-500 to-purple-500 p-6 rounded-3xl shadow-xl"
+              className="bg-gradient-to-r from-blue-500 to-purple-500 p-4 sm:p-5 md:p-6 rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl"
             >
-              <h4 className="text-xl font-bold text-white mb-6 text-center">Key Achievements</h4>
-              <div className="grid grid-cols-2 gap-4">
+              <h4 className="text-base md:text-lg lg:text-xl font-bold text-white mb-4 md:mb-6 text-center">Key Achievements</h4>
+              <div className="grid grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                 {achievements.map((achievement, index) => (
                   <motion.div
                     key={index}
@@ -242,45 +207,45 @@ function About() {
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ delay: index * 0.1 + 0.6 }}
                     whileHover={{ scale: 1.05 }}
-                    className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl text-center"
+                    className="bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-xl lg:rounded-2xl text-center"
                   >
-                    <div className="text-3xl mb-2">{achievement.icon}</div>
-                    <h5 className="font-bold text-gray-900 mb-1">{achievement.title}</h5>
-                    <p className="text-sm text-gray-600">{achievement.description}</p>
+                    <div className="text-2xl md:text-3xl mb-1 md:mb-2">{achievement.icon}</div>
+                    <h5 className="font-bold text-gray-900 text-xs md:text-sm lg:text-base mb-0.5 md:mb-1">{achievement.title}</h5>
+                    <p className="text-gray-600 text-xs md:text-sm">{achievement.description}</p>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
 
-            {/* NEW: Small Box - Quick Connect */}
+            {/* Quick Connect */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-3xl shadow-xl border border-cyan-100"
+              className="bg-gradient-to-br from-cyan-50 to-blue-50 p-4 sm:p-5 md:p-6 rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl border border-cyan-100"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-cyan-100 rounded-lg">
-                  <FaEnvelope className="text-lg text-cyan-600" />
+              <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                <div className="p-1.5 md:p-2 bg-cyan-100 rounded">
+                  <FaEnvelope className="text-base md:text-lg text-cyan-600" />
                 </div>
-                <h4 className="text-lg font-bold text-gray-900">Quick Connect</h4>
+                <h4 className="text-base md:text-lg lg:text-lg font-bold text-gray-900">Quick Connect</h4>
               </div>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">
                 Always open to discuss new opportunities and collaborations.
               </p>
               <div className="flex gap-2">
                 <NavLink
                   to="/contact"
-                  className="flex-1 text-center px-3 py-2 bg-cyan-600 text-white rounded-lg text-sm font-medium hover:bg-cyan-700 transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 text-center px-2 md:px-3 py-1.5 md:py-2 bg-cyan-600 text-white rounded text-xs md:text-sm font-medium hover:bg-cyan-700 transition-colors flex items-center justify-center gap-1 md:gap-2"
                 >
-                  <FaEnvelope className="text-sm" />
+                  <FaEnvelope className="text-xs md:text-sm" />
                   Message
                 </NavLink>
                 <a
                   href="https://www.linkedin.com/in/asif-mhaldar-ab818b297"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center px-3 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 text-center px-2 md:px-3 py-1.5 md:py-2 bg-blue-600 text-white rounded text-xs md:text-sm font-medium hover:bg-blue-700 transition-colors flex items-center justify-center gap-1 md:gap-2"
                 >
-                  <FaLinkedin className="text-sm" />
+                  <FaLinkedin className="text-xs md:text-sm" />
                   LinkedIn
                 </a>
               </div>
@@ -289,18 +254,18 @@ function About() {
             {/* Tech Stack Icons */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-r from-blue-500 to-purple-500 p-6 rounded-3xl shadow-xl"
+              className="bg-gradient-to-r from-blue-500 to-purple-500 p-4 sm:p-5 md:p-6 rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl"
             >
-              <h4 className="text-xl font-bold text-white mb-4 text-center">Tech Stack</h4>
-              <div className="flex justify-center gap-6">
+              <h4 className="text-base md:text-lg lg:text-xl font-bold text-white mb-3 md:mb-4 text-center">Tech Stack</h4>
+              <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 flex-wrap">
                 {[SiReact, SiNodedotjs, SiMongodb, SiExpress, SiJavascript, SiTailwindcss].map((Icon, index) => (
                   <motion.div
                     key={index}
                     animate={floatingAnimation}
                     style={{ animationDelay: `${index * 0.5}s` }}
-                    className="bg-white p-3 rounded-xl shadow-lg"
+                    className="bg-white p-2 md:p-3 rounded-lg md:rounded-xl shadow-md"
                   >
-                    <Icon className="text-3xl text-gray-800" />
+                    <Icon className="text-xl md:text-2xl lg:text-3xl text-gray-800" />
                   </motion.div>
                 ))}
               </div>
@@ -312,24 +277,24 @@ function About() {
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-4 md:space-y-6 lg:space-y-8"
           >
             {/* Skills Filter */}
-            <div className="bg-white p-6 rounded-3xl shadow-xl border border-gray-100">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-purple-100 rounded-xl">
-                  <FaTools className="text-2xl text-purple-600" />
+            <div className="bg-white p-4 sm:p-5 md:p-6 rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl border border-gray-100">
+              <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <div className="p-2 md:p-3 bg-purple-100 rounded-lg md:rounded-xl">
+                  <FaTools className="text-lg md:text-xl lg:text-2xl text-purple-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">My Skills</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900">My Skills</h3>
               </div>
               
-              {/* Category Filters */}
-              <div className="flex flex-wrap gap-2 mb-8">
+              {/* Category Filters - Mobile responsive */}
+              <div className="flex flex-wrap gap-1 md:gap-2 mb-4 md:mb-6 lg:mb-8 overflow-x-auto pb-2">
                 {categories.map((category) => (
                   <button
                     key={category}
                     onClick={() => setActiveFilter(category)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    className={`px-2 md:px-3 lg:px-4 py-1 md:py-1.5 lg:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                       activeFilter === category
                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -343,7 +308,7 @@ function About() {
               {/* Skills Grid */}
               <motion.div
                 layout
-                className="grid grid-cols-2 sm:grid-cols-3 gap-3"
+                className="grid grid-cols-2 sm:grid-cols-3 gap-2 md:gap-3"
               >
                 {filteredSkills.map((skill, index) => (
                   <motion.div
@@ -355,16 +320,16 @@ function About() {
                     whileHover={{ scale: 1.05, y: -5 }}
                     className="group cursor-pointer"
                   >
-                    <div className="bg-gradient-to-br from-white to-gray-50 p-4 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300">
-                      <div className="flex flex-col items-center text-center gap-2">
-                        <div className="text-2xl mb-1">
+                    <div className="bg-gradient-to-br from-white to-gray-50 p-2 md:p-3 lg:p-4 rounded-xl lg:rounded-2xl shadow-sm border border-gray-100 hover:shadow-md lg:hover:shadow-xl hover:border-blue-200 transition-all duration-300">
+                      <div className="flex flex-col items-center text-center gap-1 md:gap-2">
+                        <div className="text-lg md:text-xl lg:text-2xl mb-0.5 md:mb-1">
                           {typeof skill.icon === 'string' ? (
                             <span>{skill.icon}</span>
                           ) : (
-                            skill.icon
+                            React.cloneElement(skill.icon, { className: "text-base md:text-lg lg:text-xl" })
                           )}
                         </div>
-                        <span className="text-sm font-medium text-gray-800 group-hover:text-blue-600 transition-colors">
+                        <span className="text-xs md:text-sm font-medium text-gray-800 group-hover:text-blue-600 transition-colors leading-tight md:leading-normal">
                           {skill.name}
                         </span>
                       </div>
@@ -374,12 +339,12 @@ function About() {
               </motion.div>
 
               {/* Skill Count */}
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">
+              <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200">
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+                  <span className="text-gray-600 text-xs md:text-sm">
                     Showing {filteredSkills.length} of {skills.length} skills
                   </span>
-                  <span className="text-sm px-3 py-1 bg-blue-50 text-blue-600 rounded-full font-medium">
+                  <span className="text-xs md:text-sm px-2 md:px-3 py-1 bg-blue-50 text-blue-600 rounded-full font-medium">
                     {activeFilter === 'all' ? 'All Categories' : activeFilter}
                   </span>
                 </div>
@@ -389,28 +354,28 @@ function About() {
             {/* Experience Card */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-blue-600 to-purple-600 p-6 rounded-3xl shadow-xl text-white"
+              className="bg-gradient-to-br from-blue-600 to-purple-600 p-4 sm:p-5 md:p-6 rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl text-white"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <FaRocket className="text-2xl" />
-                <h4 className="text-xl font-bold">What I Bring</h4>
+              <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                <FaRocket className="text-lg md:text-xl lg:text-2xl" />
+                <h4 className="text-base md:text-lg lg:text-xl font-bold">What I Bring</h4>
               </div>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-2">
-                  <span className="text-lg">✅</span>
-                  <span>Full-stack development expertise</span>
+              <ul className="space-y-2 md:space-y-3">
+                <li className="flex items-start gap-1 md:gap-2">
+                  <span className="text-base md:text-lg">✅</span>
+                  <span className="text-sm md:text-base">Full-stack development expertise</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-lg">✅</span>
-                  <span>Clean, maintainable code architecture</span>
+                <li className="flex items-start gap-1 md:gap-2">
+                  <span className="text-base md:text-lg">✅</span>
+                  <span className="text-sm md:text-base">Clean, maintainable code architecture</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-lg">✅</span>
-                  <span>Responsive & accessible UI/UX design</span>
+                <li className="flex items-start gap-1 md:gap-2">
+                  <span className="text-base md:text-lg">✅</span>
+                  <span className="text-sm md:text-base">Responsive & accessible UI/UX design</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-lg">✅</span>
-                  <span>Performance optimization</span>
+                <li className="flex items-start gap-1 md:gap-2">
+                  <span className="text-base md:text-lg">✅</span>
+                  <span className="text-sm md:text-base">Performance optimization</span>
                 </li>
               </ul>
             </motion.div>
@@ -418,30 +383,30 @@ function About() {
             {/* Current Focus */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-3xl shadow-xl border border-green-100"
+              className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 sm:p-5 md:p-6 rounded-2xl lg:rounded-3xl shadow-lg md:shadow-xl border border-green-100"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-green-100 rounded-lg">
-                  <FaAward className="text-xl text-green-600" />
+              <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                <div className="p-1.5 md:p-2 bg-green-100 rounded">
+                  <FaAward className="text-base md:text-lg lg:text-xl text-green-600" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900">Current Focus</h4>
+                <h4 className="text-base md:text-lg lg:text-xl font-bold text-gray-900">Current Focus</h4>
               </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-700">Advanced React patterns</span>
+              <div className="space-y-2 md:space-y-3">
+                <div className="flex items-center gap-1 md:gap-2">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-gray-700 text-sm md:text-base">Advanced React patterns</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-700">System design principles</span>
+                <div className="flex items-center gap-1 md:gap-2">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-gray-700 text-sm md:text-base">System design principles</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-700">Cloud deployment (AWS)</span>
+                <div className="flex items-center gap-1 md:gap-2">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-gray-700 text-sm md:text-base">Cloud deployment (AWS)</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-700">Javascript mastery</span>
+                <div className="flex items-center gap-1 md:gap-2">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-gray-700 text-sm md:text-base">JavaScript mastery</span>
                 </div>
               </div>
             </motion.div>
