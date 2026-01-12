@@ -90,14 +90,14 @@ function Education() {
   return (
     <section 
       id="education" 
-      className="relative py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50"
+      className="relative py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-transparent via-gray-900/20 to-transparent"
       ref={ref}
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl sm:blur-2xl md:blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl sm:blur-2xl md:blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl sm:blur-2xl md:blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+      {/* Animated background elements matching Home page */}
+      <div className="absolute inset-0 overflow-hidden opacity-20">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,14 +108,15 @@ function Education() {
           variants={fadeInUp}
           className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full">
-            <FaGraduationCap className="text-blue-600 text-sm sm:text-base" />
-            <span className="text-xs sm:text-sm font-semibold text-blue-600 uppercase tracking-wider">ACADEMIC JOURNEY</span>
+          <div className="inline-block mb-3 sm:mb-4">
+            <span className="text-sm md:text-lg text-cyan-400 font-semibold tracking-wider">
+              🎓 EDUCATION
+            </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-            My <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Education</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
+            My <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Education</span>
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
             Academic achievements and learning milestones that shaped my technical journey
           </p>
         </motion.div>
@@ -123,7 +124,7 @@ function Education() {
         {/* Timeline Container */}
         <div className="relative">
           {/* Central Timeline Line - Hidden on mobile, visible on md+ */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 sm:w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 hidden sm:block"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 sm:w-1 bg-gradient-to-b from-cyan-500 via-blue-500 to-purple-500 hidden sm:block"></div>
           
           {/* Education Items */}
           <motion.div
@@ -143,11 +144,11 @@ function Education() {
                 }`}
               >
                 {/* Timeline Dot - Desktop */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-white border-3 sm:border-4 border-blue-600 rounded-full z-10 hidden sm:block"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-gray-900 border-3 sm:border-4 border-cyan-500 rounded-full z-10 hidden sm:block"></div>
                 
                 {/* Mobile Timeline Line & Dot */}
-                <div className="absolute left-4 sm:left-6 top-10 w-0.5 h-full bg-gradient-to-b from-blue-500 to-purple-500 sm:hidden"></div>
-                <div className="absolute left-3 sm:left-5 top-10 w-2 h-2 sm:w-3 sm:h-3 bg-blue-600 rounded-full transform -translate-y-1/2 sm:hidden"></div>
+                <div className="absolute left-4 sm:left-6 top-10 w-0.5 h-full bg-gradient-to-b from-cyan-500 to-purple-500 sm:hidden"></div>
+                <div className="absolute left-3 sm:left-5 top-10 w-2 h-2 sm:w-3 sm:h-3 bg-cyan-500 rounded-full transform -translate-y-1/2 sm:hidden"></div>
 
                 {/* Education Card */}
                 <div className={`ml-10 sm:ml-12 md:ml-14 ${
@@ -158,37 +159,37 @@ function Education() {
                     <div className={`absolute -top-3 sm:-top-4 ${
                       index % 2 === 0 ? 'sm:-left-3 md:-left-4' : 'sm:-right-3 md:-right-4 sm:left-auto'
                     } z-20`}>
-                      <div className={`p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl md:rounded-2xl bg-gradient-to-br ${edu.color} text-white shadow-lg sm:shadow-xl`}>
+                      <div className={`p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl md:rounded-2xl bg-gradient-to-br ${edu.color} text-white shadow-lg sm:shadow-xl border border-white/10 backdrop-blur-sm`}>
                         {React.cloneElement(edu.icon, { className: "text-sm sm:text-base md:text-lg" })}
                       </div>
                     </div>
 
                     {/* Card Content */}
-                    <div className="bg-white p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-md sm:shadow-lg border border-gray-100 hover:shadow-lg sm:hover:shadow-xl md:hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-1 sm:group-hover:-translate-y-2">
+                    <div className="bg-gradient-to-br from-gray-900/40 via-gray-800/40 to-gray-900/40 backdrop-blur-sm p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl border border-gray-700/50 hover:border-cyan-500/30 transition-all duration-500 group-hover:-translate-y-1 sm:group-hover:-translate-y-2">
                       {/* Year Badge */}
                       <div className={`inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full mb-3 sm:mb-4 md:mb-6 ${
                         index % 2 === 0 ? '' : 'sm:float-right'
-                      } bg-gradient-to-r from-blue-50 to-purple-50`}>
-                        <FaCalendarAlt className="text-blue-600 text-xs sm:text-sm" />
-                        <span className="text-xs sm:text-sm font-semibold text-blue-600">{edu.year}</span>
+                      } bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/30`}>
+                        <FaCalendarAlt className="text-cyan-400 text-xs sm:text-sm" />
+                        <span className="text-xs sm:text-sm font-semibold text-cyan-400">{edu.year}</span>
                       </div>
 
                       {/* Degree */}
-                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 leading-snug sm:leading-tight">
+                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 leading-snug sm:leading-tight">
                         {edu.degree}
                       </h3>
 
                       {/* Institution */}
                       <div className="flex items-center gap-1 sm:gap-2 mb-2 sm:mb-3 md:mb-4">
                         <FaUniversity className="text-gray-400 text-xs sm:text-sm" />
-                        <p className="text-sm sm:text-base md:text-lg text-gray-700 font-medium">{edu.institution}</p>
+                        <p className="text-sm sm:text-base md:text-lg text-gray-300 font-medium">{edu.institution}</p>
                       </div>
 
                       {/* Performance */}
                       <div className="mb-3 sm:mb-4">
-                        <div className="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100">
-                          <FaAward className="text-blue-600 text-xs sm:text-sm" />
-                          <span className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">
+                        <div className="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm border border-cyan-500/30">
+                          <FaAward className="text-cyan-400 text-xs sm:text-sm" />
+                          <span className="font-bold text-white text-xs sm:text-sm md:text-base">
                             {edu.cgpa || edu.percentage}
                           </span>
                         </div>
@@ -196,7 +197,7 @@ function Education() {
 
                       {/* Details */}
                       {edu.details && (
-                        <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6">
+                        <p className="text-gray-400 leading-relaxed text-xs sm:text-sm md:text-base mb-3 sm:mb-4 md:mb-6">
                           {edu.details}
                         </p>
                       )}
@@ -208,7 +209,7 @@ function Education() {
                         {edu.highlights.map((highlight, hIndex) => (
                           <span
                             key={hIndex}
-                            className="px-2 py-1 text-xs sm:text-sm font-medium bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 rounded-full border border-blue-100 whitespace-nowrap"
+                            className="px-2 py-1 text-xs sm:text-sm font-medium bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-300 rounded-full border border-cyan-500/30 backdrop-blur-sm whitespace-nowrap"
                           >
                             {highlight}
                           </span>
@@ -218,7 +219,7 @@ function Education() {
                       {/* Decorative Element */}
                       <div className={`absolute bottom-0 ${
                         index % 2 === 0 ? 'left-0' : 'right-0'
-                      } w-16 sm:w-20 md:w-24 lg:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transform ${
+                      } w-16 sm:w-20 md:w-24 lg:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full transform ${
                         index % 2 === 0 ? '' : 'rotate-180'
                       } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                     </div>
@@ -235,16 +236,16 @@ function Education() {
           animate={isInView ? "visible" : "hidden"}
           variants={fadeInUp}
           transition={{ delay: 0.6 }}
-          className="mt-10 sm:mt-12 md:mt-16 lg:mt-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 text-white shadow-lg sm:shadow-xl"
+          className="mt-10 sm:mt-12 md:mt-16 lg:mt-20 bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 shadow-lg sm:shadow-xl border border-cyan-500/20"
         >
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
-              <div className="p-2 sm:p-3 bg-white/20 rounded-lg sm:rounded-xl backdrop-blur-sm">
-                <FaRocket className="text-lg sm:text-xl md:text-2xl" />
+              <div className="p-2 sm:p-3 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-lg sm:rounded-xl backdrop-blur-sm">
+                <FaRocket className="text-lg sm:text-xl md:text-2xl text-cyan-400" />
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">Continuous Learning Journey</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">Continuous Learning Journey</h3>
             </div>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed opacity-90 mb-3 sm:mb-4 md:mb-6">
+            <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-3 sm:mb-4 md:mb-6">
               My education has provided me with a strong foundation in computer science principles, 
               complemented by hands-on experience in building real-world applications. I continue to 
               expand my knowledge through online courses, technical workshops, and personal projects.
@@ -256,9 +257,9 @@ function Education() {
                 "Problem Solving",
                 "Technical Innovation"
               ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-1 sm:gap-2 bg-white/10 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full backdrop-blur-sm">
-                  <span className="text-sm sm:text-base md:text-lg">✅</span>
-                  <span className="font-medium text-xs sm:text-sm md:text-base">{item}</span>
+                <div key={idx} className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-gray-800/50 to-gray-900/50 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full backdrop-blur-sm border border-gray-700/50">
+                  <span className="text-sm sm:text-base md:text-lg text-green-400">✅</span>
+                  <span className="font-medium text-white text-xs sm:text-sm md:text-base">{item}</span>
                 </div>
               ))}
             </div>
@@ -273,10 +274,10 @@ function Education() {
             transform: translate(0px, 0px) scale(1);
           }
           33% {
-            transform: translate(20px, -30px) scale(1.1);
+            transform: translate(30px, -50px) scale(1.1);
           }
           66% {
-            transform: translate(-15px, 15px) scale(0.9);
+            transform: translate(-20px, 20px) scale(0.9);
           }
           100% {
             transform: translate(0px, 0px) scale(1);

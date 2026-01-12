@@ -77,10 +77,10 @@ function Work() {
   ];
 
   const filters = [
-    { id: 'all', label: 'All', icon: <FaLayerGroup /> },
-    { id: 'backend', label: 'Backend', icon: <FaServer /> },
-    { id: 'frontend', label: 'Frontend', icon: <FaPalette /> },
-    { id: 'ai-ml', label: 'AI/ML', icon: <FaBrain /> }
+    { id: 'all', label: 'All', icon: <FaLayerGroup />, color: "from-cyan-500 to-blue-500" },
+    { id: 'backend', label: 'Backend', icon: <FaServer />, color: "from-blue-500 to-indigo-500" },
+    { id: 'frontend', label: 'Frontend', icon: <FaPalette />, color: "from-purple-500 to-pink-500" },
+    { id: 'ai-ml', label: 'AI/ML', icon: <FaBrain />, color: "from-green-500 to-emerald-500" }
   ];
 
   const filteredProjects = selectedFilter === 'all' 
@@ -110,11 +110,12 @@ function Work() {
   };
 
   return (
-    <section id='Work' className='relative py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50'>
-      {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-blue-200 rounded-full opacity-10 blur-2xl md:blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-purple-200 rounded-full opacity-10 blur-2xl md:blur-3xl"></div>
+    <section id='Work' className='relative py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-transparent via-gray-900/20 to-transparent'>
+      {/* Animated Background matching Home page */}
+      <div className="absolute inset-0 overflow-hidden opacity-20">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -125,14 +126,15 @@ function Work() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <div className="inline-flex items-center gap-1 sm:gap-2 mb-2 sm:mb-3 md:mb-4 px-3 sm:px-4 py-1 sm:py-1.5 md:py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full">
-            <FaCode className="text-blue-600 text-xs sm:text-sm md:text-base" />
-            <span className="text-xs sm:text-sm font-semibold text-blue-600 uppercase tracking-wider">PORTFOLIO</span>
+          <div className="inline-block mb-2 sm:mb-3 md:mb-4">
+            <span className="text-sm md:text-lg text-cyan-400 font-semibold tracking-wider">
+              🚀 MY WORK
+            </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
-            Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
+            Featured <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
             A collection of my recent work showcasing technical skills and problem-solving abilities
           </p>
         </motion.div>
@@ -148,10 +150,10 @@ function Work() {
             <button
               key={filter.id}
               onClick={() => setSelectedFilter(filter.id)}
-              className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
+              className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-3 rounded-full font-medium transition-all duration-300 whitespace-nowrap border backdrop-blur-sm ${
                 selectedFilter === filter.id
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md sm:shadow-lg shadow-blue-500/25'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 shadow-sm'
+                  ? `bg-gradient-to-r ${filter.color} text-white shadow-lg sm:shadow-xl shadow-cyan-500/20 border-cyan-500/50`
+                  : 'bg-gray-900/50 text-gray-300 border-gray-700/50 hover:bg-gray-800/50 hover:border-cyan-500/30'
               } text-xs sm:text-sm`}
             >
               {React.cloneElement(filter.icon, { className: "text-xs sm:text-sm" })}
@@ -180,11 +182,11 @@ function Work() {
                 className="group relative"
               >
                 {/* Project Card */}
-                <div className="bg-white rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-lg sm:shadow-xl border border-gray-100 hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500 h-full">
+                <div className="bg-gradient-to-br from-gray-900/40 via-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-gray-700/50 hover:border-cyan-500/30 transition-all duration-500 h-full hover:shadow-cyan-500/10">
                   
                   {/* Image Container */}
                   <div className="relative overflow-hidden h-40 sm:h-48 md:h-56">
-                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/40 z-10"></div>
                     <img
                       src={project.img}
                       alt={project.title}
@@ -192,7 +194,7 @@ function Work() {
                     />
                     
                     {/* Overlay Icon */}
-                    <div className={`absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${project.color} text-white shadow-md sm:shadow-lg z-20`}>
+                    <div className={`absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${project.color} text-white shadow-lg border border-white/10 backdrop-blur-sm z-20`}>
                       {React.cloneElement(project.icon, { className: "text-sm sm:text-base md:text-lg" })}
                     </div>
                     
@@ -203,7 +205,7 @@ function Work() {
                       rel="noopener noreferrer"
                       className="absolute top-2 sm:top-3 md:top-4 right-2 sm:right-3 md:right-4 z-20 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300"
                     >
-                      <div className="flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 font-medium hover:bg-white transition-colors">
+                      <div className="flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-gray-900/90 to-gray-800/90 backdrop-blur-sm rounded-full text-gray-300 font-medium hover:text-white hover:bg-gray-800 transition-all border border-gray-700/50">
                         <FaPlay className="text-xs sm:text-sm" />
                         <span className="text-xs sm:text-sm">Live</span>
                       </div>
@@ -213,12 +215,12 @@ function Work() {
                   {/* Content */}
                   <div className="p-3 sm:p-4 md:p-5 lg:p-6">
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1 sm:mb-2 md:mb-3 group-hover:text-blue-600 transition-colors line-clamp-1">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2 md:mb-3 group-hover:text-cyan-300 transition-colors line-clamp-1">
                       {project.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-600 mb-3 sm:mb-4 md:mb-6 leading-relaxed text-xs sm:text-sm md:text-base line-clamp-2 sm:line-clamp-3">
+                    <p className="text-gray-400 mb-3 sm:mb-4 md:mb-6 leading-relaxed text-xs sm:text-sm md:text-base line-clamp-2 sm:line-clamp-3">
                       {project.description}
                     </p>
 
@@ -227,7 +229,7 @@ function Work() {
                       {project.tags.map((tag, index) => (
                         <span
                           key={index}
-                          className="inline-flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 text-xs font-medium bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 rounded-full border border-blue-100"
+                          className="inline-flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 text-xs font-medium bg-gradient-to-r from-gray-800/50 to-gray-900/50 text-cyan-300 rounded-full border border-gray-700/50 backdrop-blur-sm"
                         >
                           <FaTag className="text-xs" />
                           {tag}
@@ -239,19 +241,19 @@ function Work() {
                     <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4 md:mb-6">
                       {project.features.slice(0, 3).map((feature, index) => (
                         <div key={index} className="flex items-center gap-1 sm:gap-2">
-                          <FaStar className="text-yellow-500 text-xs sm:text-sm" />
-                          <span className="text-xs sm:text-sm text-gray-700">{feature}</span>
+                          <FaStar className="text-yellow-400 text-xs sm:text-sm" />
+                          <span className="text-xs sm:text-sm text-gray-300">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-gray-100">
+                    <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-gray-700/50">
                       <a
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 sm:gap-2 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-md sm:hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 text-xs sm:text-sm"
+                        className="flex items-center gap-1 sm:gap-2 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 text-xs sm:text-sm border border-cyan-500/30"
                       >
                         <FaExternalLinkAlt className="text-xs sm:text-sm" />
                         <span>Live Demo</span>
@@ -260,7 +262,7 @@ function Work() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 sm:gap-2 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 bg-gray-100 text-gray-800 rounded-full font-medium hover:bg-gray-200 transition-colors text-xs sm:text-sm"
+                        className="flex items-center gap-1 sm:gap-2 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-gray-800/50 to-gray-900/50 text-gray-300 rounded-full font-medium hover:text-white hover:bg-gray-800/70 transition-all text-xs sm:text-sm border border-gray-700/50"
                       >
                         <FaGithub className="text-xs sm:text-sm" />
                         <span>Code</span>
@@ -280,17 +282,17 @@ function Work() {
           transition={{ delay: 0.6 }}
           className="mt-8 sm:mt-10 md:mt-12 text-center"
         >
-          <div className="inline-flex items-center gap-2 sm:gap-3 md:gap-4 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-white rounded-full shadow-md sm:shadow-lg">
+          <div className="inline-flex items-center gap-2 sm:gap-3 md:gap-4 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-gray-900/50 to-gray-800/50 rounded-full shadow-lg backdrop-blur-sm border border-gray-700/50">
             <div className="flex items-center gap-1 sm:gap-2">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full"></div>
-              <span className="text-xs sm:text-sm font-medium text-gray-700">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-xs sm:text-sm font-medium text-gray-300">
                 Showing {filteredProjects.length} of {projects.length} projects
               </span>
             </div>
-            <span className="text-gray-300 hidden sm:inline">|</span>
+            <span className="text-gray-700 hidden sm:inline">|</span>
             <div className="flex items-center gap-1 sm:gap-2 hidden sm:flex">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-xs sm:text-sm font-medium text-gray-700">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-cyan-500 rounded-full animate-pulse"></div>
+              <span className="text-xs sm:text-sm font-medium text-cyan-300">
                 {selectedFilter === 'all' ? 'All Categories' : selectedFilter}
               </span>
             </div>
@@ -302,7 +304,7 @@ function Work() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="mt-12 sm:mt-14 md:mt-16 lg:mt-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 text-white shadow-lg sm:shadow-xl"
+          className="mt-12 sm:mt-14 md:mt-16 lg:mt-20 bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 shadow-2xl border border-cyan-500/20"
         >
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {[
@@ -313,13 +315,40 @@ function Work() {
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-2xl sm:text-3xl md:text-4xl mb-1 sm:mb-2">{stat.icon}</div>
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">{stat.value}</div>
-                <div className="text-xs sm:text-sm opacity-90">{stat.label}</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-white">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-gray-300">{stat.label}</div>
               </div>
             ))}
           </div>
         </motion.div>
       </div>
+
+      {/* CSS Animations */}
+      <style jsx>{`
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+      `}</style>
     </section>
   );
 }

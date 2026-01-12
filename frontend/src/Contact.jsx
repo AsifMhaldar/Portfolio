@@ -26,30 +26,30 @@ function Contact() {
   };
 
   return (
-    <section id="Contact" className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full opacity-10 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 rounded-full opacity-10 blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-200 rounded-full opacity-5 blur-3xl"></div>
+    <section id="Contact" className="relative py-12 sm:py-16 md:py-20 overflow-hidden bg-gradient-to-b from-transparent via-gray-900/20 to-transparent">
+      {/* Background elements matching Home page */}
+      <div className="absolute inset-0 overflow-hidden opacity-20">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <div className="inline-block mb-3">
-            <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-full">
-              CONTACT ME
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <div className="inline-block mb-2 sm:mb-3">
+            <span className="text-sm md:text-lg text-cyan-400 font-semibold tracking-wider">
+              📱 CONTACT ME
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            Let's <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Connect</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3">
+            Let's <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Connect</span>
           </h2>
-          <p className="text-gray-600 max-w-xl mx-auto">
+          <p className="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">
             Have a project in mind or want to discuss opportunities? Feel free to reach out!
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
           {/* Left Column - Contact Form & Quick Connect */}
           <div className="space-y-4">
             {/* Contact Form */}
@@ -57,24 +57,24 @@ function Contact() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white p-5 rounded-2xl shadow-lg border border-gray-100"
+              className="bg-gradient-to-br from-gray-900/40 via-gray-800/40 to-gray-900/40 backdrop-blur-sm p-4 sm:p-5 md:p-6 rounded-2xl shadow-2xl border border-gray-700/50 hover:border-cyan-500/30 transition-all duration-300"
             >
-              <div className="flex items-center gap-2 mb-4">
-                <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
-                  <FaPaperPlane className="text-lg text-white" />
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                <div className="p-1.5 sm:p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg backdrop-blur-sm">
+                  <FaPaperPlane className="text-sm sm:text-base text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900">Send Message</h3>
+                <h3 className="text-base sm:text-lg font-bold text-white">Send Message</h3>
               </div>
               
               <form
                 action="https://formspree.io/f/mzzakewv"
                 method="POST"
                 onSubmit={handleSubmit}
-                className="space-y-3"
+                className="space-y-2 sm:space-y-3"
               >
-                <div className="grid md:grid-cols-2 gap-3">
+                <div className="grid md:grid-cols-2 gap-2 sm:gap-3">
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-400 mb-1">
                       Your Name
                     </label>
                     <input
@@ -82,11 +82,11 @@ function Contact() {
                       name="username"
                       required
                       placeholder="Asif Mhaldar"
-                      className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-200 transition-all duration-300 text-sm"
+                      className="w-full px-3 py-2 rounded-lg bg-gray-900/50 border border-gray-700/50 text-gray-300 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/20 transition-all duration-300 text-sm placeholder-gray-500"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-400 mb-1">
                       Your Email
                     </label>
                     <input
@@ -94,32 +94,32 @@ function Contact() {
                       name="email"
                       required
                       placeholder="asif.mhaldar03@gmail.com"
-                      className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-200 transition-all duration-300 text-sm"
+                      className="w-full px-3 py-2 rounded-lg bg-gray-900/50 border border-gray-700/50 text-gray-300 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/20 transition-all duration-300 text-sm placeholder-gray-500"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
                     Subject
                   </label>
                   <input
                     type="text"
                     name="subject"
                     placeholder="Project Inquiry"
-                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-200 transition-all duration-300 text-sm"
+                    className="w-full px-3 py-2 rounded-lg bg-gray-900/50 border border-gray-700/50 text-gray-300 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/20 transition-all duration-300 text-sm placeholder-gray-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                  <label className="block text-xs font-medium text-gray-400 mb-1">
                     Message
                   </label>
                   <textarea
                     name="message"
                     rows="3"
                     placeholder="Hello, I'd like to discuss..."
-                    className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-200 transition-all duration-300 resize-none text-sm"
+                    className="w-full px-3 py-2 rounded-lg bg-gray-900/50 border border-gray-700/50 text-gray-300 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/20 transition-all duration-300 resize-none text-sm placeholder-gray-500"
                   ></textarea>
                 </div>
 
@@ -127,7 +127,7 @@ function Contact() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full px-4 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full px-4 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-2 border border-cyan-500/30"
                 >
                   <FaPaperPlane className="text-xs" />
                   Send Message
@@ -138,9 +138,9 @@ function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-3 p-2 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-200"
+                  className="mt-2 sm:mt-3 p-2 bg-gradient-to-r from-green-900/20 to-emerald-900/20 rounded-lg border border-green-700/30 backdrop-blur-sm"
                 >
-                  <div className="flex items-center gap-2 text-green-600 text-xs">
+                  <div className="flex items-center gap-2 text-green-400 text-xs">
                     <span>✅</span>
                     <span className="font-medium">Message sent! I'll respond within 24 hours.</span>
                   </div>
@@ -148,16 +148,16 @@ function Contact() {
               )}
             </motion.div>
 
-            {/* Quick Connect - No bottom space */}
+            {/* Quick Connect */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-gradient-to-r from-blue-500 to-purple-500 p-4 rounded-2xl shadow-lg text-white"
+              className="bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-purple-600/20 backdrop-blur-sm p-4 rounded-2xl shadow-2xl border border-cyan-500/20"
             >
               <div className="flex items-center gap-2 mb-3">
-                <FaPaperPlane className="text-sm" />
-                <h4 className="text-sm font-bold">Quick Connect</h4>
+                <FaPaperPlane className="text-sm text-cyan-400" />
+                <h4 className="text-sm font-bold text-white">Quick Connect</h4>
               </div>
               
               <div className="grid grid-cols-4 gap-2">
@@ -165,21 +165,21 @@ function Contact() {
                   href="https://www.linkedin.com/in/asif-mhaldar-ab818b297"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-white/20 p-2 rounded-lg text-center transition-all duration-300"
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 hover:from-gray-800/50 hover:to-gray-700/50 p-2 rounded-lg text-center transition-all duration-300 border border-gray-700/50 hover:border-cyan-500/30"
                 >
                   <div className="flex flex-col items-center gap-1">
-                    <FaLinkedin className="text-sm" />
-                    <span className="text-xs">LinkedIn</span>
+                    <FaLinkedin className="text-sm text-cyan-400" />
+                    <span className="text-xs text-gray-300">LinkedIn</span>
                   </div>
                 </a>
                 
                 <a
                   href="mailto:asifmhaldar27@gmail.com"
-                  className="bg-white/10 hover:bg-white/20 p-2 rounded-lg text-center transition-all duration-300"
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 hover:from-gray-800/50 hover:to-gray-700/50 p-2 rounded-lg text-center transition-all duration-300 border border-gray-700/50 hover:border-cyan-500/30"
                 >
                   <div className="flex flex-col items-center gap-1">
-                    <FaEnvelope className="text-sm" />
-                    <span className="text-xs">Email</span>
+                    <FaEnvelope className="text-sm text-cyan-400" />
+                    <span className="text-xs text-gray-300">Email</span>
                   </div>
                 </a>
                 
@@ -187,11 +187,11 @@ function Contact() {
                   href="https://github.com/AsifMhaldar"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-white/20 p-2 rounded-lg text-center transition-all duration-300"
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 hover:from-gray-800/50 hover:to-gray-700/50 p-2 rounded-lg text-center transition-all duration-300 border border-gray-700/50 hover:border-cyan-500/30"
                 >
                   <div className="flex flex-col items-center gap-1">
-                    <FaGithub className="text-sm" />
-                    <span className="text-xs">GitHub</span>
+                    <FaGithub className="text-sm text-cyan-400" />
+                    <span className="text-xs text-gray-300">GitHub</span>
                   </div>
                 </a>
                 
@@ -199,11 +199,11 @@ function Contact() {
                   href="https://drive.google.com/file/d/13PMxW2PVKaYlenrkPs3EWVA1ckfYR3Od/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-white/20 p-2 rounded-lg text-center transition-all duration-300"
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 hover:from-gray-800/50 hover:to-gray-700/50 p-2 rounded-lg text-center transition-all duration-300 border border-gray-700/50 hover:border-cyan-500/30"
                 >
                   <div className="flex flex-col items-center gap-1">
-                    <FaFileDownload className="text-sm" />
-                    <span className="text-xs">Resume</span>
+                    <FaFileDownload className="text-sm text-cyan-400" />
+                    <span className="text-xs text-gray-300">Resume</span>
                   </div>
                 </a>
               </div>
@@ -218,26 +218,26 @@ function Contact() {
             className="space-y-4"
           >
             {/* Contact Details & Availability in one row */}
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
               {/* Contact Details */}
-              <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="p-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded">
-                    <FaEnvelope className="text-sm text-white" />
+              <div className="bg-gradient-to-br from-gray-900/40 via-gray-800/40 to-gray-900/40 backdrop-blur-sm p-3 sm:p-4 rounded-2xl shadow-2xl border border-gray-700/50">
+                <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                  <div className="p-1.5 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded backdrop-blur-sm">
+                    <FaEnvelope className="text-xs sm:text-sm text-cyan-400" />
                   </div>
-                  <h3 className="text-sm font-bold text-gray-900">Contact Info</h3>
+                  <h3 className="text-xs sm:text-sm font-bold text-white">Contact Info</h3>
                 </div>
                 
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center gap-2">
-                    <div className="p-1.5 bg-blue-100 rounded">
-                      <FaEnvelope className="text-xs text-blue-600" />
+                    <div className="p-1 sm:p-1.5 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded backdrop-blur-sm">
+                      <FaEnvelope className="text-xs text-cyan-400" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-600">Email</p>
+                      <p className="text-[10px] sm:text-xs text-gray-400">Email</p>
                       <a 
                         href="mailto:asifmhaldar27@gmail.com"
-                        className="text-blue-600 hover:text-blue-700 text-xs"
+                        className="text-cyan-300 hover:text-cyan-200 text-xs sm:text-sm"
                       >
                         asif.mhaldar03@gmail.com
                       </a>
@@ -245,26 +245,26 @@ function Contact() {
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <div className="p-1.5 bg-purple-100 rounded">
-                      <FaMapMarkerAlt className="text-xs text-purple-600" />
+                    <div className="p-1 sm:p-1.5 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded backdrop-blur-sm">
+                      <FaMapMarkerAlt className="text-xs text-purple-400" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-600">Location</p>
-                      <p className="text-gray-800 text-xs">Pune, India</p>
+                      <p className="text-[10px] sm:text-xs text-gray-400">Location</p>
+                      <p className="text-gray-300 text-xs sm:text-sm">Pune, India</p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <div className="p-1.5 bg-green-100 rounded">
-                      <FaFileDownload className="text-xs text-green-600" />
+                    <div className="p-1 sm:p-1.5 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded backdrop-blur-sm">
+                      <FaFileDownload className="text-xs text-green-400" />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-600">Resume</p>
+                      <p className="text-[10px] sm:text-xs text-gray-400">Resume</p>
                       <a
                         href="https://drive.google.com/file/d/13PMxW2PVKaYlenrkPs3EWVA1ckfYR3Od/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-700 text-xs"
+                        className="text-cyan-300 hover:text-cyan-200 text-xs sm:text-sm"
                       >
                         Download
                       </a>
@@ -274,46 +274,46 @@ function Contact() {
               </div>
 
               {/* Availability */}
-              <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-4 rounded-2xl shadow-lg text-white">
-                <div className="flex items-center gap-2 mb-3">
-                  <FaBriefcase className="text-sm" />
-                  <h4 className="text-sm font-bold">Available For</h4>
+              <div className="bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-purple-600/20 backdrop-blur-sm p-3 sm:p-4 rounded-2xl shadow-2xl border border-cyan-500/20">
+                <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                  <FaBriefcase className="text-xs sm:text-sm text-cyan-400" />
+                  <h4 className="text-xs sm:text-sm font-bold text-white">Available For</h4>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-2">
-                  <div className="bg-white/10 p-2 rounded-lg text-center">
-                    <FaBriefcase className="text-xs mb-1 mx-auto" />
-                    <span className="text-[10px] font-medium">Full-time</span>
+                <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+                  <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 p-1.5 sm:p-2 rounded-lg text-center border border-gray-700/30 backdrop-blur-sm">
+                    <FaBriefcase className="text-xs mb-1 mx-auto text-cyan-400" />
+                    <span className="text-[10px] sm:text-xs font-medium text-gray-300">Full-time</span>
                   </div>
                   
-                  <div className="bg-white/10 p-2 rounded-lg text-center">
-                    <FaHandshake className="text-xs mb-1 mx-auto" />
-                    <span className="text-[10px] font-medium">Freelance</span>
+                  <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 p-1.5 sm:p-2 rounded-lg text-center border border-gray-700/30 backdrop-blur-sm">
+                    <FaHandshake className="text-xs mb-1 mx-auto text-cyan-400" />
+                    <span className="text-[10px] sm:text-xs font-medium text-gray-300">Freelance</span>
                   </div>
                   
-                  <div className="bg-white/10 p-2 rounded-lg text-center">
-                    <span className="text-xs mb-1">👨‍💻</span>
-                    <span className="text-[10px] font-medium">Internship</span>
+                  <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 p-1.5 sm:p-2 rounded-lg text-center border border-gray-700/30 backdrop-blur-sm">
+                    <span className="text-xs mb-1 mx-auto text-cyan-400">👨‍💻</span>
+                    <span className="text-[10px] sm:text-xs font-medium text-gray-300">Internship</span>
                   </div>
                   
-                  <div className="bg-white/10 p-2 rounded-lg text-center">
-                    <span className="text-xs mb-1">💡</span>
-                    <span className="text-[10px] font-medium">Collaboration</span>
+                  <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 p-1.5 sm:p-2 rounded-lg text-center border border-gray-700/30 backdrop-blur-sm">
+                    <span className="text-xs mb-1 mx-auto text-cyan-400">💡</span>
+                    <span className="text-[10px] sm:text-xs font-medium text-gray-300">Collaboration</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Map - Full width, no left space */}
-            <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="p-1.5 bg-gradient-to-r from-red-500 to-orange-500 rounded">
-                  <FaMapMarkerAlt className="text-sm text-white" />
+            {/* Map */}
+            <div className="bg-gradient-to-br from-gray-900/40 via-gray-800/40 to-gray-900/40 backdrop-blur-sm p-3 sm:p-4 rounded-2xl shadow-2xl border border-gray-700/50">
+              <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                <div className="p-1.5 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded backdrop-blur-sm">
+                  <FaMapMarkerAlt className="text-xs sm:text-sm text-red-400" />
                 </div>
-                <h3 className="text-sm font-bold text-gray-900">Location</h3>
+                <h3 className="text-xs sm:text-sm font-bold text-white">Location</h3>
               </div>
               
-              <div className="relative h-40 rounded-xl overflow-hidden">
+              <div className="relative h-32 sm:h-36 md:h-40 rounded-lg sm:rounded-xl overflow-hidden border border-gray-700/50">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242118.17048236678!2d73.69781022308634!3d18.52454474161084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1708765037890!5m2!1sen!2sin"
                   width="100%"
@@ -327,7 +327,7 @@ function Contact() {
                 ></iframe>
               </div>
               
-              <p className="text-xs text-gray-600 text-center mt-2">
+              <p className="text-[10px] sm:text-xs text-gray-400 text-center mt-1.5 sm:mt-2">
                 Pune, Maharashtra • Available for remote opportunities
               </p>
             </div>
@@ -335,6 +335,33 @@ function Contact() {
           </motion.div>
         </div>
       </div>
+
+      {/* CSS Animations */}
+      <style jsx>{`
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+      `}</style>
     </section>
   );
 }
