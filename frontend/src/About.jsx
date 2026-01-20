@@ -9,16 +9,12 @@ import {
   FaBrain,
   FaGraduationCap,
   FaRocket,
-  FaUserGraduate,
   FaAward,
   FaEnvelope,
   FaLinkedin,
-  FaFilter,
-  FaArrowRight,
   FaLightbulb
 } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiReact, SiNodedotjs, SiTailwindcss, SiJavascript, SiCplusplus, SiPython, SiMysql } from 'react-icons/si';
-import { NavLink } from 'react-router-dom';
 
 const skills = [
   { name: 'C', icon: '🧠', category: 'programming', color: 'text-blue-400' },
@@ -101,17 +97,26 @@ function About() {
   return (
     <section 
       id='About' 
-      className='relative py-12 md:py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-transparent via-gray-900/20 to-transparent'
+      className='relative py-12 md:py-20 lg:py-28 overflow-hidden min-h-screen'
       ref={ref}
     >
-      {/* Background matching Home page */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
+      {/* EXACT SAME BACKGROUND AS HOME.JSX */}
+      {/* Main background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+      
+      {/* Animated gradient blobs */}
+      <div className="absolute inset-0 overflow-hidden opacity-30">
         <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-purple-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Gradient overlays for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-purple-900/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-gray-900/30 to-gray-900/70 pointer-events-none" />
+
+      <div className="relative px-4 sm:px-6 md:px-10 lg:px-20 pt-8 md:pt-12 z-10">
         
         {/* Heading matching Home page */}
         <motion.div
@@ -234,13 +239,13 @@ function About() {
                 Always open to discuss new opportunities and collaborations.
               </p>
               <div className="flex gap-2">
-                <NavLink
-                  to="/contact"
+                <a
+                  href="#Contact"
                   className="flex-1 text-center px-2 md:px-3 py-1.5 md:py-2 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded text-xs md:text-sm font-medium hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-1 md:gap-2 border border-cyan-500/30"
                 >
                   <FaEnvelope className="text-xs md:text-sm" />
                   Message
-                </NavLink>
+                </a>
                 <a
                   href="https://www.linkedin.com/in/asif-mhaldar-ab818b297"
                   target="_blank"
@@ -447,6 +452,60 @@ function About() {
         }
         .animation-delay-4000 {
           animation-delay: 4s;
+        }
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes spin-slow-reverse {
+          from {
+            transform: rotate(360deg);
+          }
+          to {
+            transform: rotate(0deg);
+          }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 25s linear infinite;
+        }
+        .animate-spin-slow-reverse {
+          animation: spin-slow-reverse 30s linear infinite;
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 1s ease-out;
+        }
+        .animation-delay-300 {
+          animation-delay: 0.3s;
+        }
+        @keyframes bounce-slow {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 4s infinite;
+        }
+        
+        /* Particle glow effect */
+        canvas {
+          filter: contrast(1.2) brightness(1.1);
         }
       `}</style>
     </section>

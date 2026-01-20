@@ -90,23 +90,32 @@ function Education() {
   return (
     <section 
       id="education" 
-      className="relative py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-transparent via-gray-900/20 to-transparent"
+      className="relative py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden min-h-screen"
       ref={ref}
     >
-      {/* Animated background elements matching Home page */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
+      {/* EXACT SAME BACKGROUND AS HOME.JSX */}
+      {/* Main background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+      
+      {/* Animated gradient blobs */}
+      <div className="absolute inset-0 overflow-hidden opacity-30">
         <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-purple-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Gradient overlays for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-purple-900/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-gray-900/30 to-gray-900/70 pointer-events-none" />
+
+      <div className="relative px-4 sm:px-6 md:px-10 lg:px-20 pt-8 md:pt-12 z-10">
         {/* Header Section */}
         <motion.div
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={fadeInUp}
-          className="text-center mb-10 sm:mb-12 md:mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16 animate-fadeInUp"
         >
           <div className="inline-block mb-3 sm:mb-4">
             <span className="text-sm md:text-lg text-cyan-400 font-semibold tracking-wider">
@@ -160,7 +169,9 @@ function Education() {
                       index % 2 === 0 ? 'sm:-left-3 md:-left-4' : 'sm:-right-3 md:-right-4 sm:left-auto'
                     } z-20`}>
                       <div className={`p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl md:rounded-2xl bg-gradient-to-br ${edu.color} text-white shadow-lg sm:shadow-xl border border-white/10 backdrop-blur-sm`}>
-                        {React.cloneElement(edu.icon, { className: "text-sm sm:text-base md:text-lg" })}
+                        {React.cloneElement(edu.icon, { 
+                          className: "text-sm sm:text-base md:text-lg animate-spin-slow" 
+                        })}
                       </div>
                     </div>
 
@@ -169,7 +180,7 @@ function Education() {
                       {/* Year Badge */}
                       <div className={`inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full mb-3 sm:mb-4 md:mb-6 ${
                         index % 2 === 0 ? '' : 'sm:float-right'
-                      } bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/30`}>
+                      } bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-500/30 animate-bounce-slow`}>
                         <FaCalendarAlt className="text-cyan-400 text-xs sm:text-sm" />
                         <span className="text-xs sm:text-sm font-semibold text-cyan-400">{edu.year}</span>
                       </div>
@@ -188,7 +199,7 @@ function Education() {
                       {/* Performance */}
                       <div className="mb-3 sm:mb-4">
                         <div className="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm border border-cyan-500/30">
-                          <FaAward className="text-cyan-400 text-xs sm:text-sm" />
+                          <FaAward className="text-cyan-400 text-xs sm:text-sm animate-pulse" />
                           <span className="font-bold text-white text-xs sm:text-sm md:text-base">
                             {edu.cgpa || edu.percentage}
                           </span>
@@ -209,7 +220,7 @@ function Education() {
                         {edu.highlights.map((highlight, hIndex) => (
                           <span
                             key={hIndex}
-                            className="px-2 py-1 text-xs sm:text-sm font-medium bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-300 rounded-full border border-cyan-500/30 backdrop-blur-sm whitespace-nowrap"
+                            className="px-2 py-1 text-xs sm:text-sm font-medium bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-300 rounded-full border border-cyan-500/30 backdrop-blur-sm whitespace-nowrap hover:scale-105 transition-transform duration-300"
                           >
                             {highlight}
                           </span>
@@ -236,12 +247,12 @@ function Education() {
           animate={isInView ? "visible" : "hidden"}
           variants={fadeInUp}
           transition={{ delay: 0.6 }}
-          className="mt-10 sm:mt-12 md:mt-16 lg:mt-20 bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 shadow-lg sm:shadow-xl border border-cyan-500/20"
+          className="mt-10 sm:mt-12 md:mt-16 lg:mt-20 bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 shadow-lg sm:shadow-xl border border-cyan-500/20 animate-fadeInUp animation-delay-300"
         >
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
-              <div className="p-2 sm:p-3 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-lg sm:rounded-xl backdrop-blur-sm">
-                <FaRocket className="text-lg sm:text-xl md:text-2xl text-cyan-400" />
+              <div className="p-2 sm:p-3 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-lg sm:rounded-xl backdrop-blur-sm border border-cyan-500/30">
+                <FaRocket className="text-lg sm:text-xl md:text-2xl text-cyan-400 animate-bounce-slow" />
               </div>
               <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">Continuous Learning Journey</h3>
             </div>
@@ -252,14 +263,19 @@ function Education() {
             </p>
             <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4">
               {[
-                "Continuous Learning",
-                "Practical Application",
-                "Problem Solving",
-                "Technical Innovation"
+                { text: "Continuous Learning", icon: "📚" },
+                { text: "Practical Application", icon: "💡" },
+                { text: "Problem Solving", icon: "🔧" },
+                { text: "Technical Innovation", icon: "🚀" }
               ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-gray-800/50 to-gray-900/50 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full backdrop-blur-sm border border-gray-700/50">
-                  <span className="text-sm sm:text-base md:text-lg text-green-400">✅</span>
-                  <span className="font-medium text-white text-xs sm:text-sm md:text-base">{item}</span>
+                <div 
+                  key={idx} 
+                  className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-gray-800/50 to-gray-900/50 px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full backdrop-blur-sm border border-gray-700/50 hover:border-cyan-500/30 transition-all duration-300 group/item"
+                >
+                  <span className="text-sm sm:text-base md:text-lg text-green-400 animate-pulse">{item.icon}</span>
+                  <span className="font-medium text-white text-xs sm:text-sm md:text-base group-hover/item:text-cyan-300 transition-colors">
+                    {item.text}
+                  </span>
                 </div>
               ))}
             </div>
@@ -267,7 +283,7 @@ function Education() {
         </motion.div>
       </div>
 
-      {/* CSS Animations */}
+      {/* Add ALL custom animations from Home.jsx */}
       <style jsx>{`
         @keyframes blob {
           0% {
@@ -291,6 +307,60 @@ function Education() {
         }
         .animation-delay-4000 {
           animation-delay: 4s;
+        }
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes spin-slow-reverse {
+          from {
+            transform: rotate(360deg);
+          }
+          to {
+            transform: rotate(0deg);
+          }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 25s linear infinite;
+        }
+        .animate-spin-slow-reverse {
+          animation: spin-slow-reverse 30s linear infinite;
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 1s ease-out;
+        }
+        .animation-delay-300 {
+          animation-delay: 0.3s;
+        }
+        @keyframes bounce-slow {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 4s infinite;
+        }
+        
+        /* Particle glow effect */
+        canvas {
+          filter: contrast(1.2) brightness(1.1);
         }
         @media (min-width: 640px) {
           .sm\\:pr-1\\/2 {

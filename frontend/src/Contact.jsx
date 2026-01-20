@@ -28,12 +28,6 @@ function Contact() {
   return (
     <section id="Contact" className="relative py-12 sm:py-16 md:py-20 overflow-hidden bg-gradient-to-b from-transparent via-gray-900/20 to-transparent">
       {/* Background elements matching Home page */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-4000"></div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <div className="inline-block mb-2 sm:mb-3">
