@@ -52,7 +52,7 @@ function Header() {
   ];
 
   const externalLinks = [
-    { name: 'Resume', href: 'https://drive.google.com/file/d/13PMxW2PVKaYlenrkPs3EWVA1ckfYR3Od/view?usp=sharing', icon: <FaFileDownload /> },
+    { name: 'Resume', href: 'https://drive.google.com/file/d/1KayLL33KqtHhtfFJKN6idWW7ZPFTqfNv/view?usp=sharing', icon: <FaFileDownload /> },
     { name: 'GitHub', href: 'https://github.com/AsifMhaldar', icon: <FaGithub /> },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/asif-mhaldar-ab818b297', icon: <FaLinkedin /> },
     { name: 'LeetCode', href: 'https://leetcode.com/', icon: <SiLeetcode /> },

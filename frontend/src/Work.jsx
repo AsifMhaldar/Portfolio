@@ -9,13 +9,16 @@ import {
   FaLayerGroup,
   FaPlay,
   FaTag,
-  FaStar
+  FaStar,
+  FaCode 
 } from 'react-icons/fa';
 
 import Wanderlust from './assets/wanderlust.jpeg';
 import Sugarcane from './assets/sugarcane.jpg';
 import Thapa from './assets/thapa.jpeg';
 import BookMyShow from './assets/BookMyShow.jpg';
+import LeetCode from './assets/leetcode.png';
+import GithubFinder from './assets/github.png';
 
 function Work() {
   const [selectedFilter, setSelectedFilter] = useState('all');
@@ -77,7 +80,36 @@ function Work() {
       icon: <FaLayerGroup />,
       color: "from-orange-500 to-red-500",
       features: ["Ticket Booking UI", "Movie Listings", "User Flow"]
+    },
+    {
+      id: 5,
+      title: "LeetCode Clone",
+      img: LeetCode, // import image first (see below)
+      description:
+        "A LeetCode clone platform with coding problems, problem listing UI, and interactive user experience.",
+      live: "https://leetcode-clone-live-url-if-any", // optional, or keep GitHub only
+      github: "https://github.com/AsifMhaldar/leetcode-clone",
+      tags: ["React", "JavaScript", "CSS", "Frontend"],
+      category: "frontend",
+      icon: <FaCode />,
+      color: "from-yellow-500 to-orange-500",
+      features: ["Problem Listing", "Clean UI", "Coding Practice Platform"]
+    },
+    {
+      id: 6,
+      title: "GitHub Finder",
+      img: GithubFinder, // import image
+      description:
+        "A web app to search GitHub users and display their profiles and repositories using GitHub API.",
+      live: "https://zingy-github-cf3247.netlify.app/",
+      github: "https://github.com/AsifMhaldar/GithubFinder",
+      tags: ["React", "GitHub API", "JavaScript", "CSS"],
+      category: "frontend",
+      icon: <FaGithub />,
+      color: "from-gray-600 to-black",
+      features: ["User Search", "Profile View", "Repo Listing"]
     }
+
   ];
 
   const filters = [
