@@ -42,7 +42,7 @@ function Work() {
       img: Sugarcane,
       description:
         "Real-time AI solution to detect sugarcane buds with 90% accuracy.",
-      live: "https://github.com/AsifMhaldar/Sugarcane",
+      live: "https://drive.google.com/file/d/1Uld4fwhIdrXYfch40Z6nzQPjUePuQYlU/view?usp=sharing",
       github: "https://github.com/AsifMhaldar/Sugarcane",
       tags: ["Python", "Machine Learning", "Computer Vision"],
       category: "ai-ml",
